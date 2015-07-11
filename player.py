@@ -14,19 +14,19 @@ class Player(Actor):
         else:
             Actor.__init__(self,x,y,img)
         self.player_speed = 5
-        self.health = 5
+        self.health = 20
 
     def update(self):
         if self.rect.x < 0:
             self.rect.x = 0
             print("left")
-        elif self.rect.x+self.rect.width > main.SCREEN_WIDTH:
+        if self.rect.x+self.rect.width > main.SCREEN_WIDTH:
             self.rect.x = main.SCREEN_WIDTH-self.rect.width
             print("right")
-        elif self.rect.y < 0:
+        if self.rect.y < 0:
             self.rect.y = 0
             print("top")
-        elif self.rect.y+self.rect.height > main.SCREEN_HEIGHT:
+        if self.rect.y+self.rect.height > main.SCREEN_HEIGHT:
             self.rect.y = main.SCREEN_HEIGHT-self.rect.height
             print(self.rect.y)
 

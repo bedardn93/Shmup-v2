@@ -9,9 +9,9 @@ class Actor(pygame.sprite.Sprite):
     def __init__(self,x=None,y=None,img=None):
         super().__init__()
         if img is None:
-            self.image = pygame.image.load(os.path.join(os.path.dirname(__file__),"spaceship.png")).convert_alpha()
+            self.image = pygame.image.load(os.path.join('images',"spaceship.png")).convert()
         else:
-            self.image = pygame.image.load(os.path.join(os.path.dirname(__file__),img)).convert_alpha()
+            self.image = pygame.image.load(os.path.join('images',img)).convert_alpha()
         self.rect = self.image.get_rect()
         if x is None and y is None:
             self.rect.x = 0
@@ -27,6 +27,7 @@ class Actor(pygame.sprite.Sprite):
     def update(self):
         self.rect.x += self.x_speed
         self.rect.y += self.y_speed
+
     def getX(self):
         return self.rect.x
 
