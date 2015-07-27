@@ -9,7 +9,7 @@ class Actor(pygame.sprite.Sprite):
     def __init__(self,x=None,y=None,img=None):
         super().__init__()
         if img is None:
-            self.image = pygame.image.load(os.path.join('images',"spaceship.png")).convert()
+            self.image = pygame.image.load(os.path.join('images',"spaceship.png")).convert_alpha()
         else:
             self.image = pygame.image.load(os.path.join('images',img)).convert_alpha()
         self.rect = self.image.get_rect()
@@ -36,6 +36,7 @@ class Actor(pygame.sprite.Sprite):
 
     def getPos(self):
         return [self.rect.x,self.rect.y]
+
     def getXSpeed(self):
         return self.x_speed
 
@@ -50,3 +51,8 @@ class Actor(pygame.sprite.Sprite):
 
     def getWidth(self):
         self.rect.width
+
+    def resizeImage(self,img):
+        #self.image = pygame.transform.scale(pygame.image.load(os.path.join('images',img)),size,(0,0))
+        self.image = pygame.image.load(os.path.join('images',img))
+        #return self.image

@@ -2,7 +2,7 @@ __author__ = 'Nick'
 
 from actors import Actor
 
-class Enemy(Actor):
+class Asteroid(Actor):
 
     def __init__(self,x=None,y=None,img=None):
         super().__init__(x,y,img)

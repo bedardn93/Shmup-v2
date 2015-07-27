@@ -14,6 +14,8 @@ class Backdrop(Actor):
             Actor.__init__(self,None,None,img)
         else:
             Actor.__init__(self,x,y,img)
+
+        pygame.transform.scale(self.getImage(),(1920,1080))
         self.y_speed = 4
 
     def update(self):
